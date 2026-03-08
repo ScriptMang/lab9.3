@@ -1,6 +1,6 @@
 import type {TaskStatus} from './types/index.ts'
 import type {Task} from './types/index.ts'
-import type {TaskItemProps} from './types/index.ts'
+// import type {TaskItemProps} from './types/index.ts'
 import  TaskItem from './components/TaskItem'
 
 import {useState} from 'react'
@@ -47,13 +47,15 @@ function App() {
     console.log("change task status style");
   }
 
+  // removeTaskHandler takes the string-id and converts
+ //  it to a number to be used to delete the task from the list
   const removeTaskHandler = (taskId: string) => {
     console.log("Remove a task");
   }
 
   return (
     <>
-    <TaskItem task= {taskData} onStatusChange={taskStatusHandler} onDelete = {removeTaskHandler} />
+    <TaskItem task= {taskData as Task} onStatusChange={taskStatusHandler} onDelete = {removeTaskHandler} />
     </>
   )
 }
