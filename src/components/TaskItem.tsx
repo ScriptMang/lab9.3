@@ -25,8 +25,8 @@ function TaskItem({task, onStatusChange, onDelete}: TaskItemProps) {
             <button onClick = {()=> onDelete(task.id)}>Delete</button>
         </div>
         <div>
-            <span></span>
-            <span></span>
+            <span>Priority: {task.priority}</span>
+            <span>Due: {task.dueDate}</span>
         </div>
         </>
     )
