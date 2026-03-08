@@ -22,7 +22,7 @@ function TaskItem({task, onStatusChange, onDelete}: TaskItemProps) {
                     <option value="completed">Completed</option>
                 </select>
             </div>
-            <button onChange = {(e)=> {onDelete(e.target.value)}}>Delete</button>
+            <button onClick = {()=> onDelete(task.id)}>Delete</button>
         </div>
         <div>
             <span></span>

@@ -28,10 +28,6 @@ import './App.css'
 //  Handle prop passing between components.
 //  Implement proper event handling.
 
-
-
-
-
 function App() {
   const [taskData, setTaskData] = useState<Task | null>({
         id: "001",
@@ -47,10 +43,10 @@ function App() {
     console.log("change task status style");
   }
 
-  // removeTaskHandler takes the string-id and converts
- //  it to a number to be used to delete the task from the list
+   // removeTaskHandler takes the string-id and converts
+  //  it to a number to be used to delete the task from the list
   const removeTaskHandler = (taskId: string) => {
-    console.log("Remove a task");
+    console.log(`Remove a task with id: ${taskId}`);
   }
 
   return (
