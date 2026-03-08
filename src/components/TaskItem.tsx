@@ -1,17 +1,8 @@
 import type {TaskItemProps} from './../types'
 
 
-  function(){
 
-    
-  }
-  
-
-
-function TaskItems({task, onStatusChange, onDelete}: TaskItemProps) {
-  
-
-  
+function TaskItem({task, onStatusChange, onDelete}: TaskItemProps) {
   
     return (
         <>
@@ -21,8 +12,8 @@ function TaskItems({task, onStatusChange, onDelete}: TaskItemProps) {
                 <p>{task.description}</p>
             </div>
             <div>
-                <select defaultValue={ task.Status} onChange={() => {
-                     return onStatusChange(
+                <select defaultValue={ task.status } onChange={() => {
+                     onStatusChange(
                         "3", "completed"
                      );
                 }}>
@@ -31,7 +22,7 @@ function TaskItems({task, onStatusChange, onDelete}: TaskItemProps) {
                     <option value="completed">Completed</option>
                 </select>
             </div>
-            <button>Delete</button>
+            <button onChange = {(e)=> {onDelete(e.target.value)}}>Delete</button>
         </div>
         <div>
             <span></span>
@@ -39,5 +30,6 @@ function TaskItems({task, onStatusChange, onDelete}: TaskItemProps) {
         </div>
         </>
     )
-
 }
+
+export default TaskItem
