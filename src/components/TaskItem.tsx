@@ -7,9 +7,8 @@ function TaskItem({task, onStatusChange, onDelete}: TaskItemProps) {
     return (
         <>
         <div id="taskContainer">
-            <div id="taskDescriptionContainer">
+            <div id="taskTitle">
                 <h3>{task.title}</h3>
-                <p>{task.description}</p>
             </div>
             <div id="taskItemOptions">
                 <select defaultValue={ task.status } onChange={() => {
@@ -24,6 +23,7 @@ function TaskItem({task, onStatusChange, onDelete}: TaskItemProps) {
                 <button onClick = {()=> onDelete(task.id)}>Delete</button>
             </div>
         </div>
+        <p>{task.description}</p>
         <div>
             <span>Priority: {task.priority}</span>
             <span>Due: {task.dueDate}</span>
