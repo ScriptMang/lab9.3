@@ -27,7 +27,12 @@ function TaskItem({task, onStatusChange, onDelete}: TaskItemProps) {
           </div>
           <p>{task.description}</p>
           <div id="taskInfo2">
-            <span>Priority: {task.priority}</span>
+            
+       {
+         task.priority ==='low' ? <span style={{color: "green"}}>Priority: {task.priority}</span> : 
+         task.priority ==='medium' ? <span style={{color: "orange"}}>Priority: {task.priority}</span> :
+         task.priority ==='high' ? <span style={{color: "red"}}>Priority: {task.priority}</span> : null
+       }
             <span>Due: {task.dueDate}</span>
           </div>
         </div>
