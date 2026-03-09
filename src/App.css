@@ -1,3 +1,7 @@
+#taskContainer {
+    border: solid black 1px;
+}
+
 #taskTitleInfo1 {
     display: flex;
 }
