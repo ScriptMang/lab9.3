@@ -14,3 +14,8 @@
     align-self: center;
     margin-left: 200px;
 }
+
+#taskInfo2 {
+    display: flex;
+    gap: 10px;
+}
