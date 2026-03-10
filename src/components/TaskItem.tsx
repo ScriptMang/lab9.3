@@ -1,5 +1,5 @@
 import type {TaskItemProps} from './../types'
-
+import type {TaskStatus} from './../types'
 
 
 function TaskItem({task, onStatusChange, onDelete}: TaskItemProps) {
@@ -14,8 +14,8 @@ function TaskItem({task, onStatusChange, onDelete}: TaskItemProps) {
             <div id="taskItemOptions">
               <select
                 defaultValue={task.status}
-                onChange={() => {
-                  onStatusChange("1", "completed");
+                onChange={(e) => {
+                  onStatusChange("1", e.target.value as TaskStatus);
                 }}
               >
                 <option value="pending">Pending</option>
