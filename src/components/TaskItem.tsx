@@ -17,6 +17,11 @@ function TaskItem({task, onStatusChange, onDelete}: TaskItemProps) {
                 onChange={(e) => {
                   onStatusChange("1", e.target.value as TaskStatus);
                 }}
+                style={ 
+                        task.status === 'in-progress' ? { backgroundColor: "yellow", color: 'brown'} : 
+                        task.status === 'pending' ? {color: "blue"}: 
+                        task.status === 'completed' ? {color: "green"} : {color: "black"}
+                      }
               >
                 <option value="pending">Pending</option>
                 <option value="in-progress">In Progress</option>
