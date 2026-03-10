@@ -15,7 +15,7 @@ function TaskItem({task, onStatusChange, onDelete}: TaskItemProps) {
               <select
                 defaultValue={task.status}
                 onChange={() => {
-                  onStatusChange("3", "completed");
+                  onStatusChange("1", "completed");
                 }}
               >
                 <option value="pending">Pending</option>
@@ -25,7 +25,7 @@ function TaskItem({task, onStatusChange, onDelete}: TaskItemProps) {
               <button onClick={() => onDelete(task.id)}>Delete</button>
             </div>
           </div>
-          <p>{task.description}</p>
+          <p id="taskDescription">{task.description}</p>
           <div id="taskInfo2">
             
        {

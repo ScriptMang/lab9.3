@@ -40,6 +40,8 @@ function App() {
 
   //  taskStatusHandler needs to change style of taskStatus dropdown
   const taskStatusHandler = (taskId: string, newStatus: TaskStatus) => {
+    const numVal = taskId
+    setTaskData({...taskData, status: newStatus} as Task)
     console.log("change task status style");
   }
 

@@ -1,9 +1,16 @@
 #taskContainer {
     border: solid black 1px;
+    width: 440px;
 }
 
 #taskTitleInfo1 {
     display: flex;
+    margin-left: 15px;
+}
+
+#taskDescription {
+    margin-top: 0px;
+    margin-left: 15px;
 }
 
 #taskItemOptions {
@@ -18,4 +25,5 @@
 #taskInfo2 {
     display: flex;
     gap: 10px;
+    margin-left: 15px;
 }
