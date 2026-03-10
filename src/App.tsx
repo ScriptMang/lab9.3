@@ -42,7 +42,7 @@ function App() {
   const taskStatusHandler = (taskId: string, newStatus: TaskStatus) => {
     const numVal = taskId
     setTaskData({...taskData, status: newStatus} as Task)
-    console.log("change task status style");
+    console.log(`changed task status style to ${(taskData as Task).status}`);
   }
 
    // removeTaskHandler takes the string-id and converts
