@@ -79,7 +79,7 @@ function App() {
   }
   
   // copy of the tasklist prior to filtering 
-  const preFilteredTaskList = taskList;
+  const preFilteredTaskList = taskList as Task[];
 
   // filters tasks based on status or priority changes for each of their drop downs 
   const filterTaskHandler = (filter: { status?: TaskStatus
@@ -89,6 +89,7 @@ function App() {
       } else if (filter?.priority !== undefined) {
          setTaskList(prevTasks => (prevTasks as Task[]).filter(task => task.priority === filter.priority));
       } else {
+        setTaskList(preFilteredTaskList);
         console.log("Both the task status and the task priority passed are undefined")
         console.log("Resetting the TaskList.")
       }
