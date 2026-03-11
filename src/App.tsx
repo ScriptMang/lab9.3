@@ -1,6 +1,7 @@
 import type {TaskStatus} from './types/index.ts'
 import type {Task} from './types/index.ts'
 import TaskList from './components/TaskList'
+import TaskFilter from './components/TaskFilter'
 
 import {useState} from 'react'
 import './App.css'
@@ -76,9 +77,26 @@ function App() {
     console.log(`Remove a task with id: ${taskId}`);
     setTaskList(prevTasks => (prevTasks as Task[]).filter(task => Number(task.id) !== numId));
   }
+  
+  // copy of the tasklist prior to filtering 
+  const preFilteredTaskList = taskList;
+
+  // filters tasks based on status or priority changes for each of their drop downs 
+  const filterTaskHandler = (filter: { status?: TaskStatus
+    priority?: 'low' | 'medium' | 'high';}) =>{
+      if (filter?.status !== undefined){
+         setTaskList(prevTasks => (prevTasks as Task[]).filter(task => task.status === filter.status));
+      } else if (filter?.priority !== undefined) {
+         setTaskList(prevTasks => (prevTasks as Task[]).filter(task => task.priority === filter.priority));
+      } else {
+        console.log("Both the task status and the task priority passed are undefined")
+        console.log("Resetting the TaskList.")
+      }
+  }
 
   return (
   <>
+  <TaskFilter onFilterChange={filterTaskHandler}/>
   <TaskList tasks={taskList as Task[]} onStatusChange={taskStatusHandler} onDelete={removeTaskHandler} />
   </>
 )
