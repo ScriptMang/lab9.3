@@ -10,6 +10,12 @@
     list-style: none;
 }
 
+#taskFilterContainer{
+    display: flex;
+    gap: 10px;
+}
+
+
 #taskTitleInfo1 {
     display: flex;
     margin-left: 15px;
