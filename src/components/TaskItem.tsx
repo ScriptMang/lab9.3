@@ -15,7 +15,7 @@ function TaskItem({task, onStatusChange, onDelete}: TaskItemProps) {
               <select
                 defaultValue={task.status}
                 onChange={(e) => {
-                  onStatusChange("1", e.target.value as TaskStatus);
+                  onStatusChange(task.id, e.target.value as TaskStatus);
                 }}
                 style={ 
                         task.status === 'in-progress' ? { backgroundColor: "yellow", color: 'brown'} : 
