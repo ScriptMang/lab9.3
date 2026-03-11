@@ -72,7 +72,9 @@ function App() {
    // removeTaskHandler takes the string-id and converts
   //  it to a number to be used to delete the task from the list
   const removeTaskHandler = (taskId: string) => {
+    const numId = Number(taskId);
     console.log(`Remove a task with id: ${taskId}`);
+    setTaskList(prevTasks => (prevTasks as Task[]).filter(task => Number(task.id) !== numId));
   }
 
   return (
