@@ -34,14 +34,14 @@ function App() {
         description: "Clean the kitchen.",
         status: "pending",
         priority: "low",
-        dueDate: "2/23/2026"
+        dueDate: "12/31/2023"
   }, {
         id: "002",
         title: "Task 2",
         description: "Clean the dishes.",
         status: "pending",
         priority: "medium",
-        dueDate: "2/23/2026"
+        dueDate: "1/1/2024"
   },
 {
         id: "003",
@@ -49,7 +49,7 @@ function App() {
         description: "Sweep the floor.",
         status: "pending",
         priority: "high",
-        dueDate: "2/23/2026"
+        dueDate: "1/24/2024"
   }])
 
   //  taskStatusHandler needs to change style of taskStatus dropdown
