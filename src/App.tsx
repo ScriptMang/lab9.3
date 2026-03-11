@@ -1,7 +1,6 @@
 import type {TaskStatus} from './types/index.ts'
 import type {Task} from './types/index.ts'
-// import type {TaskItemProps} from './types/index.ts'
-import  TaskItem from './components/TaskItem'
+import TaskList from './components/TaskList'
 
 import {useState} from 'react'
 import './App.css'
@@ -29,20 +28,30 @@ import './App.css'
 //  Implement proper event handling.
 
 function App() {
-  const [taskData, setTaskData] = useState<Task | null>({
+    const [taskList, setTaskList] = useState<Task[] | null>([{
         id: "001",
         title: "Task 1",
         description: "Clean the kitchen.",
         status: "pending",
         priority: "low",
         dueDate: "2/23/2026"
-  })
+  }])
 
   //  taskStatusHandler needs to change style of taskStatus dropdown
   const taskStatusHandler = (taskId: string, newStatus: TaskStatus) => {
-    const numVal = taskId
-    setTaskData({...taskData, status: newStatus} as Task)
-    console.log(`changed task status style to ${(taskData as Task).status}`);
+    const numVal = Number(taskId)
+    console.log("Inside the task handler the str_id to num_id is: ", numVal);
+    if (taskList !== null) {
+      setTaskList(prevTasks =>
+        (prevTasks as Task[]).map(task =>
+          Number(task.id) === numVal ? {...task, status: newStatus} : task
+        )
+      );
+      console.log(`whats the value of numVal: ${numVal}`);
+      console.log(`changed task status style to ${taskList[numVal-1].status}`);
+    } else {
+      console.log("couldn't change the task's status style, its value is null.")
+    }
   }
 
    // removeTaskHandler takes the string-id and converts
@@ -52,10 +61,12 @@ function App() {
   }
 
   return (
-    <>
-    <TaskItem task= {taskData as Task} onStatusChange={taskStatusHandler} onDelete = {removeTaskHandler} />
-    </>
-  )
+  <>
+  <TaskList tasks={taskList as Task[]} onStatusChange={taskStatusHandler} onDelete={removeTaskHandler} />
+  </>
+)
+
+
 }
 
 export default App
