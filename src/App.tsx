@@ -35,6 +35,21 @@ function App() {
         status: "pending",
         priority: "low",
         dueDate: "2/23/2026"
+  }, {
+        id: "002",
+        title: "Task 2",
+        description: "Clean the dishes.",
+        status: "pending",
+        priority: "medium",
+        dueDate: "2/23/2026"
+  },
+{
+        id: "003",
+        title: "Task 3",
+        description: "Sweep the floor.",
+        status: "pending",
+        priority: "high",
+        dueDate: "2/23/2026"
   }])
 
   //  taskStatusHandler needs to change style of taskStatus dropdown

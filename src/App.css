@@ -3,6 +3,13 @@
     width: 440px;
 }
 
+#taskListContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+}
+
 #taskTitleInfo1 {
     display: flex;
     margin-left: 15px;
